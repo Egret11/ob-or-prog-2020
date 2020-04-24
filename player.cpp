@@ -5,8 +5,19 @@
 Player::Player(int idx){
     index = idx;
     bucketSize = 0;
-    name = "";
-    status = ""; 
+    status = "HASNTPLAYED"; 
+    if(idx == 0){
+        name = "Valas";
+    }
+    if(idx == 1){
+        name = "Alex";
+    }
+    if(idx == 2){
+        name = "Isidoros";
+    }
+    if(idx == 3){
+        name = "Nixlos";
+    }
 }
 
 void Player::setStatus(string newStatus = "HASNTPLAYED"){
