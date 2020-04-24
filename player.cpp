@@ -7,16 +7,16 @@ Player::Player(int idx){
     bucketSize = 0;
     status = "HASNTPLAYED"; 
     if(idx == 0){
-        name = "Valas";
+        name = "Player1";
     }
     if(idx == 1){
-        name = "Alex";
+        name = "Player2";
     }
     if(idx == 2){
-        name = "Isidoros";
+        name = "Player3";
     }
     if(idx == 3){
-        name = "Nixlos";
+        name = "Player4";
     }
 }
 
