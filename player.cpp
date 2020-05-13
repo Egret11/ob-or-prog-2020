@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #include "player.h"
 
 bool Player::combinationCanBePlayed(Combination *current, Combination *last){
@@ -17,9 +17,5 @@ bool Player::combinationCanBePlayed(Combination *current, Combination *last){
 
 // TODO: Implement here the methods combinationCanBePlayed and countBucketPoints of Player
 // Do not implement any other methods of Player as these are already implemented in file playercombinations.cpp
-=======
-#include "player.h"
 
-// TODO: Implement here the methods combinationCanBePlayed and countBucketPoints of Player
-// Do not implement any other methods of Player as these are already implemented in file playercombinations.cpp
->>>>>>> 61507405d294dd17ec1d5bebad76154559d76a0c
+
