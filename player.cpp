@@ -8,6 +8,10 @@ bool Player::combinationCanBePlayed(Combination *current, Combination *last){
     else if(current->getType() == STRAIGHTFLUSH && last->getType() == FOUROFAKIND){
         return true;
     }
+    else if(current->getType() == STRAIGHTFLUSH && last->getType() == STRAIGHTFLUSH){
+        if(current->getNumberOfCards() >= last->getNumberOfCards()) {return true;}
+        else if(current->getValue() > last->getValue() && current->getNumberOfCards() == last->getNumberOfCards()){return true;} 
+    }
     else if((current->getType() == STRAIGHTFLUSH || current->getType() == FOUROFAKIND) && (last->getType() != FOUROFAKIND || last->getType() != STRAIGHTFLUSH) ){
         return true;
     } 
