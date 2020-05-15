@@ -12,3 +12,6 @@ Combination::Combination(Card** cards, CombinationType type, int numberOfCards){
     this->numberOfCards = numberOfCards;
 }
 
+Combination::~Combination(){
+    delete[] cards;
+}
