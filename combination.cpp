@@ -13,38 +13,34 @@ Combination::~Combination(){
     delete[] cards;
 }
 
-Single::Single(Card* card){
+Single::Single(Card* card):Combination(cards, SINGLE, 1){
   cards = new Card[1];
   cards[0] = card;
-  Combination(cards, SINGLE, 1);
 }
 
 
 
-Pair::Pair(Card* card1, Card* card2){
+Pair::Pair(Card* card1, Card* card2):Combination(cards, PAIR, 2){
   cards = new Card[2];
   cards[0] = card1;
   cards[1] = card2;
-  Combination(cards, PAIR, 2);
 }
 
 
-ThreeOfAKind::ThreeOfAKind(Card* card1, Card* card2, Card* card3){
+ThreeOfAKind::ThreeOfAKind(Card* card1, Card* card2, Card* card3):Combination(cards, THREEOFAKIND, 3){
   cards = new Card[3];
   cards[0] = card1;
   cards[1] = card2;
   cards[2] = card3;
-  Combination(cards, THREEOFAKIND, 3);
 }
 
 
 
-Stairs::Stairs(Card** cards, int numberOfCards){
-    Combination(cards, STAIRS, numberOfCards)
+Stairs::Stairs(Card** cards, int numberOfCards):Combination(cards, STAIRS, numberOfCards){
 }
 
 
-FullHouse::FullHouse(ThreeOfAKind* combination1, Pair* combination2){
+FullHouse::FullHouse(ThreeOfAKind* combination1, Pair* combination2):Combination(cards,FULLHOUSE,5){
   cards = new Card[5];
 
   cards[0] = combination1[0];
@@ -54,13 +50,11 @@ FullHouse::FullHouse(ThreeOfAKind* combination1, Pair* combination2){
   cards[3] = combination2[0];
   cards[4] = combination2[1];
 
-  Combination(cards,FULLHOUSE,5)
 }
 
 
 //
-Straight::Straight(Card** cards, int numberOfCards){
-  Combination(cards, STRAIGHT, numberOfCards);
+Straight::Straight(Card** cards, int numberOfCards):Combination(cards, STRAIGHT, numberOfCards){
 }
 
 
