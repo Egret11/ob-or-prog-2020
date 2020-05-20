@@ -54,7 +54,7 @@ FullHouse::FullHouse(ThreeOfAKind* combination1, Pair* combination2){
   cards[3] = combination2[0];
   cards[4] = combination2[1];
 
-  Combination(cards,FULLHOUSE,5);
+  Combination(cards,FULLHOUSE,5)
 }
 
 
