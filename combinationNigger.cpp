@@ -10,14 +10,14 @@ Combination::Combination(Card** cards, CombinationType type, int numberOfCards){
     this->cards = cards;
     this->type = type;
     this->numberOfCards = numberOfCards;
-    if(type != FULLHOUSE){ value = cards[numberOfCards - 1]->getValue(); }
-    else{ value = cards[0]->getValue() * 10 + cards[4]->getValue(); }
-
 }
 
 Combination::~Combination(){
     delete[] cards;
 }
 
-
-
+Pair::Pair(Card* card1, Card* card2) : Combination::Combination(cards, PAIR, 2){
+  Card **cards = new Card*[2];
+  cards[0] = card1;
+  cards[1] = card2;
+}
