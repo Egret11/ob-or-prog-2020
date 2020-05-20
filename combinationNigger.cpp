@@ -16,9 +16,8 @@ Combination::~Combination(){
     delete[] cards;
 }
 
-Pair::Pair(Card* card1, Card* card2) : Combination::Combination(){
+Pair::Pair(Card* card1, Card* card2) : Combination::Combination(cards, PAIR, 2){
   Card **cards = new Card*[2];
   cards[0] = card1;
   cards[1] = card2;
-  Combination::Combination(cards, PAIR, 2);
 }
