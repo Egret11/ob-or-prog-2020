@@ -4,11 +4,13 @@
 int Player::countBucketPoints(){
     int points = 0;
     for(int i = 0; i != bucketSize; i++){
-            if(bucket[i]->getValue() == 5){points+=5;}
-            else if(bucket[i]->getValue() == 10){points+=10;}
-            else if(bucket[i]->getValue() == 13){points+=10;}
-            else if(bucket[i]->getSuit() == PHOENIX){points-=25;}
-            else if(bucket[i]->getSuit() == DRAGON){points+=25;}
+        for(int j = 0; j != bucketSize; j++){
+            if(bucket[i][j].getValue() == 5){points+=5;}
+            else if(bucket[i][j].getValue() == 10){points+=10;}
+            else if(bucket[i][j].getValue() == 13){points+=10;}
+            else if(bucket[i][j].getSuit() == PHOENIX){points-=25;}
+            else if(bucket[i][j].getSuit() == DRAGON){points+=25;}
+        }
     }
     return points;
 }
