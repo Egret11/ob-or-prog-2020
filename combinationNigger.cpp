@@ -35,3 +35,4 @@ StraightFlush::StraightFlush(Straight* combination){
     numberOfCards = combination->getNumberOfCards();
     type = STRAIGHTFLUSH;
 }
+
