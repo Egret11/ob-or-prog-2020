@@ -44,9 +44,9 @@ Stairs::Stairs(Card** cards, int numberOfCards):Combination(cards, STAIRS, numbe
 
 
 FullHouse::FullHouse(ThreeOfAKind* combination1, Pair* combination2):Combination(cards,FULLHOUSE,5){
-  cards = new Card*[5];
+  cards = new Card[5];
 
-  cards[0] = combination1->getCard(0);
+  cards[0] = combination1[0];
   cards[1] = combination1[1];
   cards[2] = combination1[2];
 
