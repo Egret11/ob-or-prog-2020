@@ -25,7 +25,7 @@ bool Player::combinationCanBePlayed(Combination *current, Combination *last){
         if(current->getNumberOfCards() >= last->getNumberOfCards()) {return true;}
         else if(current->getValue() > last->getValue() && current->getNumberOfCards() == last->getNumberOfCards()){return true;} 
     }
-    else if((current->getType() == STRAIGHTFLUSH || current->getType() == FOUROFAKIND) && (last->getType() != FOUROFAKIND || last->getType() != STRAIGHTFLUSH) ){
+    else if((current->getType() == STRAIGHTFLUSH || current->getType() == FOUROFAKIND) && (last->getType() != FOUROFAKIND && last->getType() != STRAIGHTFLUSH) ){
         return true;
     } 
     else
