@@ -27,6 +27,11 @@ bool Combination::containsCard(Card* card)
 }
 
 
+Card* Combination::getCard(int index){
+  return cards[index];
+}
+
+
 CombinationType Combination::getType()
 {
     return type;

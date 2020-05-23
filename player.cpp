@@ -15,22 +15,22 @@ int Player::countBucketPoints(){
 
 
 bool Player::combinationCanBePlayed(Combination *current, Combination *last){
-    if(last->getType() == FOUROFAKIND && current->getType() == FOUROFAKIND) return current->getValue() > last->getValue(); // FOAK on FOAK
+    if(last->getType() == FOUROFAKIND && current->getType() == FOUROFAKIND) return current->getValue() > last->getValue(); // Four Of A Kind VS Four Of A Kind,
+                                                                                                                           // the higher value wins 
+    else if( (current->getType() == STRAIGHTFLUSH) && (last->getType() == FOUROFAKIND) ) return true; // Straight Flush VS Four Of A Kind, Straight Flush wins 
     
-    else if( (current->getType() == STRAIGHTFLUSH) && (last->getType() == FOUROFAKIND) ) return true; // SF ON FOAK
-    
-    else if(current->getType() == STRAIGHTFLUSH && last->getType() == STRAIGHTFLUSH){ // SF on SF
+    else if( (current->getType() == STRAIGHTFLUSH) && (last->getType() == STRAIGHTFLUSH) ){ // Straight Flush VS Straight Flush then we examine further:
         
-        if(current->getNumberOfCards() > last->getNumberOfCards()) return true; // current has more cards 
+        if(current->getNumberOfCards() > last->getNumberOfCards()) return true; // current is lengthier and wins
         
         else if( (current->getNumberOfCards() == last->getNumberOfCards()) 
-                && (current->getValue() > last->getValue()) ) return true; // equal length but current is higher
+                && (current->getValue() > last->getValue()) ) return true; // if they have equal length: current needs higher value
 
-        else return false; // then current is shorter
+        else return false; // then current is shorter and thus can't be played
     }
     
-    else if( current->getType() == STRAIGHTFLUSH || current->getType() == FOUROFAKIND
-             && last->getType() != FOUROFAKIND && last->getType() != STRAIGHTFLUSH ) return true; // bomb on NOT bomb
+    else if( ( (current->getType() == STRAIGHTFLUSH) || (current->getType() == FOUROFAKIND) )
+            && ( (last->getType() != FOUROFAKIND) && (last->getType() != STRAIGHTFLUSH) ) ) return true; // current is a BOMB, last isn't
     
     return (current->getType() == last->getType())                          // same type 
             && (current->getNumberOfCards() == last->getNumberOfCards())    // equal length (for stairs and straights)
