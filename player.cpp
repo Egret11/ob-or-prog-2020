@@ -3,7 +3,7 @@
 
 int Player::countBucketPoints(){
     int points = 0;
-    for(int i = 0; i != bucketSize; i++){ // loop over the bucket to add the points of any point-having card
+    for(int i = 0; i != bucketSize; i++){                   // loop over the bucket, accumulating the points
             if(bucket[i]->getValue() == 5){points+=5;}
             else if(bucket[i]->getValue() == 10){points+=10;}
             else if(bucket[i]->getValue() == 13){points+=10;}
